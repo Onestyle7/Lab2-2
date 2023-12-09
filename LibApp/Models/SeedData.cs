@@ -22,10 +22,10 @@ namespace LibApp.Models
                 }
 
                 context.MembershipTypes.AddRange(
-                    new MembershipType { Id = 1, SignUpFee = 0, DurationInMonths = 0, DiscountRate = 0 },
-                    new MembershipType { Id = 2, SignUpFee = 30, DurationInMonths = 1, DiscountRate = 5 },
-                    new MembershipType { Id = 3, SignUpFee = 90, DurationInMonths = 3, DiscountRate = 10 },
-                    new MembershipType { Id = 4, SignUpFee = 300, DurationInMonths = 12, DiscountRate = 20 }
+                    new MembershipType { Id = 1, Name ="1", SignUpFee = 0, DurationInMonths = 0, DiscountRate = 0 },
+                    new MembershipType { Id = 2, Name ="2", SignUpFee = 30, DurationInMonths = 1, DiscountRate = 5 },
+                    new MembershipType { Id = 3, Name ="3", SignUpFee = 90, DurationInMonths = 3, DiscountRate = 10 },
+                    new MembershipType { Id = 4, Name ="4", SignUpFee = 300, DurationInMonths = 12, DiscountRate = 20 }
                 );
 
                 context.SaveChanges();

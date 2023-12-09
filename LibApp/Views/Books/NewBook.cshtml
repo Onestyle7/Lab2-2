@@ -1,0 +1,34 @@
+﻿@model LibApp.ViewModels.NewBookViewModel;
+
+@{
+    ViewBag.Title = "NewBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Book</h2>
+@using (Html.BeginForm("Create", "Book"))
+{
+    <div class="form-group">
+        @Html.HiddenFor(m => m.Book.Id)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Book.Title)
+        @Html.TextBoxFor(m => m.Book.Title, new {@class = "form-control"})
+
+        @*<label for="Name" class="form-label">Name</label>*@
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Book.Author)
+        @Html.TextBoxFor(m => m.Book.Author, new {@class = "form-control"})
+    </div>
+  @*  <div class="form-ckeck">
+        <label class="fomr-check-label" for="flexCheckDefault">
+            @Html.CheckBoxFor(m => m.Customer.SubscribedToNewsletter) Subscribed to Newsletter?
+        </label>
+    </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre)
+@*        @Html.DropDownListFor(m => m.Genre, new SelectList(Model.Genre, "Id", "Genre"), "Select Book", new {@class = "form-control"})
+*@    </div>
+    <button type="submit"></button>
+}

@@ -118,6 +118,32 @@ namespace LibApp.Controllers
                 return View();
             }
         }
+        [HttpPost]
+        public IActionResult Create(NewBookViewModel viewModel)
+        {
+            if (viewModel.Book.Id == 0)
+            {
+                //_context.Customers.Add(viewModel.Book);
+            }
+            else
+            {
+                var customerInDb = _context.Books.Single(c => c.Id == viewModel.Book.Id);
+
+                customerInDb.Title = viewModel.Book.Title;
+                customerInDb.Author = viewModel.Book.Author;
+                customerInDb.Genre.Id = viewModel.Book.Genre.Id;
+                customerInDb.NumberInStock = viewModel.Book.NumberInStock;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Book");
+        }
+        public IActionResult NewBook(IEnumerable<Genre> genre)
+        {
+            var NewBook = _context.Books.ToList();
+            NewBookViewModel viewModel = new NewBookViewModel { Genre = genre };
+
+            return View();
+        }
 
         private ApplicationDbContext _context;
     }

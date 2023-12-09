@@ -2454,19 +2454,19 @@
     ]
   },
   "packageFolders": {
-    "D:\\Users\\mpajak\\.nuget\\packages\\": {}
+    "D:\\Users\\bartlomiej.klus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\mpajak\\source\\repos\\Lab2-2\\LibApp\\LibApp.csproj",
+      "projectUniqueName": "D:\\Users\\bartlomiej.klus\\Source\\Repos\\Lab2-2\\LibApp\\LibApp.csproj",
       "projectName": "LibApp",
-      "projectPath": "D:\\Users\\mpajak\\source\\repos\\Lab2-2\\LibApp\\LibApp.csproj",
-      "packagesPath": "D:\\Users\\mpajak\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\mpajak\\source\\repos\\Lab2-2\\LibApp\\obj\\",
+      "projectPath": "D:\\Users\\bartlomiej.klus\\Source\\Repos\\Lab2-2\\LibApp\\LibApp.csproj",
+      "packagesPath": "D:\\Users\\bartlomiej.klus\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\bartlomiej.klus\\Source\\Repos\\Lab2-2\\LibApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "D:\\Users\\mpajak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Users\\bartlomiej.klus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

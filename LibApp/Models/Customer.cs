@@ -12,6 +12,7 @@ namespace LibApp.Models
         public DateTime? Birthdate { get; set; }
         public bool SubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
+        public byte MembershipTypeId { get; set; }
         public Customer()
         {
 

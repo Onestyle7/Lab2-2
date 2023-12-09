@@ -39,8 +39,49 @@ namespace LibApp.Controllers
             return View(customer);
         }
 
-        public IActionResult New() { return View(); }
+        public IActionResult New() 
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel{ MembershipTypes = membershipTypes };
+            
+            
+            return View(viewModel); 
+        }
+        [HttpPost]
+        public IActionResult Create(NewCustomerViewModel viewModel)
+        {
+            if (viewModel.Customer.Id == 0)
+            {
+                _context.Customers.Add(viewModel.Customer);
+            }
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == viewModel.Customer.Id);
 
+                customerInDb.Name = viewModel.Customer.Name;
+                customerInDb.Birthdate = viewModel.Customer.Birthdate;
+                customerInDb.MembershipTypeId = viewModel.Customer.MembershipTypeId;
+                customerInDb.SubscribedToNewsletter = viewModel.Customer.SubscribedToNewsletter;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Customers");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if(customer == null)
+            {
+                return NotFound();
+            }
+            var viewModel = new NewCustomerViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            return View("New", viewModel);
+        }
         private ApplicationDbContext _context;
     }
 }
